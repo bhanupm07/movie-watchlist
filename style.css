@@ -1,0 +1,278 @@
+@import url("https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  min-height: 100vh;
+  background-image: url("./images/bgimagepc.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: "Mukta", sans-serif;
+  color: white;
+}
+
+.hide {
+  display: none;
+}
+
+/* ====== NAVBAR ====== */
+
+nav {
+  display: flex;
+  color: white;
+  justify-content: space-around;
+  align-items: center;
+  padding: 2rem;
+  /* border: 2px solid green; */
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+div.input-div {
+  position: relative;
+  width: 40%;
+  /* border: 2px solid green; */
+}
+
+i.fa-magnifying-glass {
+  position: absolute;
+  right: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.7rem;
+  cursor: pointer;
+}
+
+input#search-input {
+  background-color: rgba(255, 255, 255, 0.454);
+  border: none;
+  border-radius: 3rem;
+  outline: none;
+  padding: 1rem 1rem 1rem 2rem;
+  width: 100%;
+  font-family: "Mukta", sans-serif;
+  color: white;
+  font-size: 1.5rem;
+  caret-color: black;
+}
+
+::placeholder {
+  color: #ffffffc1;
+}
+
+a.watchlist {
+  text-decoration: none;
+  color: white;
+  font-size: 2rem;
+  transition: transform 0.5s;
+}
+
+/* ====== MOVIES CONTAINER ====== */
+
+main.movies-container,
+.watchlist-container {
+  /* border: 2px solid green; */
+  display: flex;
+  flex-direction: column;
+  /* flex-wrap: wrap; */
+  /* columns: 2; */
+  /* padding: 2rem 4rem; */
+  align-items: center;
+}
+
+div.explore {
+  /* background-color: rgba(255, 255, 255, 0.235); */
+  border-radius: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+  margin: 2rem 4rem;
+  /* display: none; */
+}
+
+h3 {
+  color: #dfdddd;
+  margin-top: 1rem;
+  font-size: 2rem;
+}
+
+div.movie,
+div.title,
+div.time-genre,
+div.watchlist-btn,
+div.remove-btn {
+  display: flex;
+  align-items: center;
+}
+
+div.movie {
+  background-color: rgba(255, 255, 255, 0.135);
+  border-radius: 1rem;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  width: 70%;
+  gap: 2rem;
+}
+
+div.movie > img {
+  width: 12rem;
+  border-radius: 1rem;
+  /* width: 100%; */
+}
+
+div.movie-info {
+  display: flex;
+  flex-direction: column;
+}
+
+h2.movie-title {
+  font-size: 2.2rem;
+}
+
+div.title,
+div.watchlist-btn,
+div.remove-btn {
+  gap: 0.8rem;
+}
+
+span {
+  font-size: 1.3rem;
+}
+
+div.time-genre {
+  gap: 1.4rem;
+  margin: 0.5rem 0 1.2rem;
+}
+
+.plus-img,
+div.remove-img {
+  width: 2.5rem;
+  cursor: pointer;
+}
+
+.plus-img img,
+.remove-img img {
+  width: 100%;
+  display: block;
+}
+
+p.movie-plot {
+  font-size: 1.7rem;
+  line-height: 1.5;
+  color: grey;
+}
+
+div.not-available-div {
+  /* background-color: white; */
+  /* height: 90vh; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.not-available {
+  font-size: 3rem;
+}
+
+/* ======= HOVER & ACTIVE PROPERTIES ====== */
+
+i.fa-magnifying-glass:active {
+  font-size: 1.5rem;
+}
+
+a.watchlist:hover {
+  transform: scale(1.2);
+}
+
+a.watchlist:active {
+  transform: scale(0.9);
+}
+
+/* ======  WATCHLIST PAGE STYLING ====== */
+
+.watchlist-title {
+  font-size: 5rem;
+}
+
+.watchlist-empty-div {
+  /* height: 80vh; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.watchlist-empty {
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+#watchlist-plus {
+  width: 2.3rem;
+}
+
+.add-some {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.add-some span {
+  font-size: 2rem;
+}
+
+/* ====== MEDIA QUERY ====== */
+
+@media all and (max-width: 800px) {
+  h1 {
+    font-size: 3.5rem;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    /* padding: 1rem; */
+  }
+
+  div.input-div {
+    /* align-self: stretch; */
+    width: 80%;
+  }
+
+  div.movie {
+    width: 90%;
+  }
+}
+
+@media all and (max-width: 500px) {
+  div.movie {
+    flex-direction: column;
+  }
+
+  div.movie > img {
+    width: 100%;
+  }
+}
+
+@media all and (max-width: 440px) {
+  body {
+    background-image: url("./images/bgimagemobile.jpg");
+  }
+
+  ::placeholder {
+    color: transparent;
+  }
+}
